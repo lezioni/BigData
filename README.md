@@ -11,9 +11,9 @@
 
 ## Conteggio parole
 
-Input: file di testo
+**Input**: file di testo
 
-Output: numero di occorrenze di ciascuna parola presente nel file
+**Output**: numero di occorrenze di ciascuna parola presente nel file
 
 
 
@@ -53,4 +53,34 @@ mapred streaming -input /input.txt -output /conteggio_parole -mapper ./Map -redu
 
 
 
+
+# Secondo esercizio
+
+## Allarme temperatura cuscinetti
+
+
+
+**Input**: file di testo contenente in ciascuna riga `sensore_id, timestamp, temperatura`
+
+**Output**: per ogni sensore contare i giorni in cui la temperatura è stata sopra il valore di soglia di 50°C
+
+
+
+Input
+
+```
+S1, 2021-01-01, 32
+S2, 2021-01-01, 52
+S1, 2021-01-02, 43
+S2, 2021-01-02, 58
+S1, 2021-01-03, 55
+S1, 2021-01-03, 47
+```
+
+Output
+
+```
+S1, 1
+S2, 2
+```
 
