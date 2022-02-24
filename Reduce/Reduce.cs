@@ -7,8 +7,17 @@ namespace Reduce
     {
         static void Main(string[] args)
         {
-            // Dictionary for holding a count of words
-            Dictionary<string, int> words = new Dictionary<string, int>();
+            // ELENCO GIORNATE SOPRA SOGLIA PER SENSORE
+
+            /*
+             * Expected output
+             * 
+                S2   2021-01-01, 2021-01-02
+                S1   2021-01-03
+             */
+
+            // Dictionary for holding days over thresold for every sensor
+            Dictionary<string, string> reduceOutput = new Dictionary<string, string>();
 
             string line;
             //Read from STDIN
@@ -16,30 +25,26 @@ namespace Reduce
             {
                 // Data from Hadoop is tab-delimited key/value pairs
                 var sArr = line.Split('\t');
-
-                // Get the word
-                string word = sArr[0];
-                // Get the count
-                int count = Convert.ToInt32(sArr[1]);
-
-                //Do we already have a count for the word?
-                if (words.ContainsKey(word))
+                // Get the sensor id
+                string sensorId = sArr[0];
+                if (reduceOutput.ContainsKey(sensorId))
                 {
-                    //If so, increment the count
-                    words[word] += count;
+                    //Do we already have a count for the sensor?
+                    if (reduceOutput[sensorId].Contains(sArr[1]))
+                        continue;
+
+                    reduceOutput[sensorId] += ", " + sArr[1];
                 }
                 else
                 {
-                    //Add the key to the collection
-                    words.Add(word, count);
+                    reduceOutput.Add(sensorId, sArr[1]);
                 }
             }
-            //Finally, emit each word and count
-            foreach (var word in words)
+            //Finally, emit each sensorId and count
+            foreach ((var key, var value) in reduceOutput)
             {
                 //Emit tab-delimited key/value pairs.
-                //In this case, a word and a count of 1.
-                Console.WriteLine("{0}\t{1}", word.Key, word.Value);
+                Console.WriteLine("{0}\t{1}", key, value);
             }
         }
     }
