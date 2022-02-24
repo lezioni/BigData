@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 
 namespace Map
 {
@@ -7,21 +6,30 @@ namespace Map
     {
         static void Main(string[] args)
         {
+            // CALCOLO TEMPERATURA MEDIA PER SENSORE
+
+            /*
+             * Sample data:
+             * 
+                S1, 2021-01-01, 32
+                S2, 2021-01-01, 52
+                S1, 2021-01-02, 43
+                S2, 2021-01-02, 58
+                S1, 2021-01-03, 55
+                S1, 2021-01-03, 47
+             */
+
             string line;
             //Hadoop passes data to the mapper on STDIN
             while ((line = Console.ReadLine()) != null)
             {
-                // We only want words, so strip out punctuation, numbers, etc.
-                var onlyText = Regex.Replace(line, @"\.|;|:|,|[0-9]|'", "");
-                // Split at whitespace.
-                var words = Regex.Matches(onlyText, @"[\w]+");
-                
-                foreach (var word in words)
-                {
-                    //Emit tab-delimited key/value pairs.
-                    //In this case, a word and a count of 1.
-                    Console.WriteLine("{0}\t1", word);
-                }
+                // Split line in fields
+                var fields = line.Split(",");
+
+                var key = fields[0];    // Id sensore
+                var value = fields[2];  // Temperatura
+                //Emit tab-delimited key/value pairs.
+                Console.WriteLine(key + "\t" + value);
             }
         }
     }
