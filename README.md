@@ -131,3 +131,35 @@ Z2 S2   1
 Z2 S3   1
 ```
 
+
+
+# Quarto esercizio
+
+## Allarme temperatura cuscinetti per impianto
+
+
+
+**Input**: file di testo contenente in ciascuna riga `sensore_id, timestamp, temperatura`
+
+**Output**: per ogni impianto e sensore elencare i giorni in cui la temperatura è stata sopra il valore di soglia di 50°C
+
+
+
+Input
+
+```
+S1, 2021-01-01, 32
+S2, 2021-01-01, 52
+S1, 2021-01-02, 43
+S2, 2021-01-02, 58
+S1, 2021-01-03, 55
+S1, 2021-01-03, 47
+```
+
+Output atteso
+
+```
+S2   2021-01-01, 2021-01-02
+S1   2021-01-03
+```
+
