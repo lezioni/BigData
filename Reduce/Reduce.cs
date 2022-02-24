@@ -7,8 +7,20 @@ namespace Reduce
     {
         static void Main(string[] args)
         {
-            // Dictionary for holding a count of words
-            Dictionary<string, int> words = new Dictionary<string, int>();
+            // CONTEGGIO GIORNI SOPRA SOGLIA PER IMPIANTO E SENSORE
+
+            /*
+             * Expected output
+             * 
+                Z1 S2   2
+                Z1 S1   1
+                Z2 S1   3
+                Z2 S2   1
+                Z2 S3   1
+             */
+
+            // Dictionary for holding days over thresold for every sensor
+            Dictionary<string, int> reduceOutput = new Dictionary<string, int>();
 
             string line;
             //Read from STDIN
@@ -16,30 +28,26 @@ namespace Reduce
             {
                 // Data from Hadoop is tab-delimited key/value pairs
                 var sArr = line.Split('\t');
-
-                // Get the word
-                string word = sArr[0];
+                // Get the sensor id
+                string sensorId = sArr[0];
                 // Get the count
                 int count = Convert.ToInt32(sArr[1]);
 
-                //Do we already have a count for the word?
-                if (words.ContainsKey(word))
+                //Do we already have a count for the sensor?
+                if (reduceOutput.ContainsKey(sensorId))
                 {
-                    //If so, increment the count
-                    words[word] += count;
+                    reduceOutput[sensorId] += count;
                 }
                 else
                 {
-                    //Add the key to the collection
-                    words.Add(word, count);
+                    reduceOutput.Add(sensorId, count);
                 }
             }
-            //Finally, emit each word and count
-            foreach (var word in words)
+            //Finally, emit each sensorId and count
+            foreach ((var key, var value) in reduceOutput)
             {
                 //Emit tab-delimited key/value pairs.
-                //In this case, a word and a count of 1.
-                Console.WriteLine("{0}\t{1}", word.Key, word.Value);
+                Console.WriteLine("{0}\t{1}", key, value);
             }
         }
     }
