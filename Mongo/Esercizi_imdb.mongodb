@@ -29,7 +29,7 @@ db.IMDB.find({year: {$exists: true}}).forEach(function (doc) {
 })
 db.IMDB.bulkWrite(bulkOps, { "ordered": true });
 
-//Trovare tutti i film con rating maggiore o uduale a 9,5 su IMDB
+//Trovare tutti i film con rating maggiore o uguale a 9,5 su IMDB
 // Mostrare anno, titolo e rating
 // Ordinare i risultati per data, dal più recente al più vecchio
 use('its');
