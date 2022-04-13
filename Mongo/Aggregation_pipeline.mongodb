@@ -1,0 +1,41 @@
+use('its')
+
+
+
+db.studenti.aggregate([
+    // seleziono i campi da visualizzare
+    {
+        $project: {
+        matricola:1,
+        cognome:1,
+        nome: 1,
+        sesso: 1,
+        _id: 0}
+    },
+
+    // filtro i documenti
+    {
+        $match: {sesso:'m'}
+    },
+
+    // raggruppo i documenti
+    {
+        $group: {
+        _id : '$nome', 
+        conteggio: {$sum: 1}}
+    },
+
+    // ordino i documenti
+    {
+        $sort: {conteggio:-1}},
+
+    // salto i primi tre documenti
+    {
+        $skip: 3
+    }, 
+
+    // leggo solo 3 documenti
+    {
+        $limit: 3
+    }
+])

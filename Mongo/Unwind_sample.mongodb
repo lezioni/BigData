@@ -1,0 +1,17 @@
+use('its')
+
+db.unwinddemo.drop()
+
+// Sample data
+db.unwinddemo.insert(
+    {
+        nome: 'mauro',
+        sport:['mtb','sci','nuoto']
+    }
+)
+
+// Unwind
+db.unwinddemo.aggregate(
+    {$project: {_id:0}},
+    {$unwind: '$sport'}
+)
