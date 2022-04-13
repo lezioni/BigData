@@ -1,0 +1,75 @@
+// Importare i dati presenti in Mongo/Dataset/imdb.zip nella collection IMDB
+
+// Select the database to use.
+use('its');
+
+// Bonifica dati - I metodo
+// Aggiorna un documento alla volta, va bene per collezioni "piccole"
+db.IMDB.find({year: {$exists: true}}).forEach(function(doc) 
+  { 
+        var int_value = new NumberInt(doc.year); 
+        db.IMDB.updateOne({_id: doc._id}, 
+			    {$set : {year: int_value}}); 
+    });
+
+
+// Bonifica dati - II metodo
+// Crea un array di documenti da aggiornare ed esegue tutti gli aggiornamenti in un unica operazione
+// Va bene anche per collezioni grandi (vengono effettuate 100k operazioni alla volta)
+// https://www.mongodb.com/docs/manual/reference/method/db.collection.bulkWrite/
+var bulkOps = [];
+db.IMDB.find({year: {$exists: true}}).forEach(function (doc) { 
+    var int_value = new NumberInt(doc.year)
+    bulkOps.push({ 
+            "updateOne": { 
+                "filter": { "_id": doc._id } ,
+                "update": { "$set": {year: int_value} } 
+            }
+        });
+})
+db.IMDB.bulkWrite(bulkOps, { "ordered": true });
+
+//Trovare tutti i film con rating maggiore o uduale a 9,5 su IMDB
+// Mostrare anno, titolo e rating
+// Ordinare i risultati per data, dal più recente al più vecchio
+use('its');
+db.IMDB.find(
+    {'imdb.rating': {$gte: 9.5}},
+    {year:1, title:1, _id:0, 'imdb.rating':1}
+    )
+    .sort({year:-1})
+
+
+//Elencare titolo e autori dei film in lingua italiana di genera animazione del 2006
+use('its');
+db.IMDB.find(
+    {
+        genres: 'Animation',
+        languages: { $in : ['Italian']},
+        year:2006
+    },
+    {
+        title: 1, 
+        writers:1,
+        _id:0
+    }
+    ).pretty()
+
+// Trovare il voto medio su IMDB dei film per ciascun anno di pubblicazione
+// Non considerare i film con rating non valido
+db.IMDB.aggregate([
+    {
+      '$match': { 'imdb.rating': {$type: 'number'} }
+    },
+    {
+      '$group': 
+        {
+          '_id': '$year', 
+          'votomedio': {'$avg': '$imdb.rating'}
+        }
+    },
+    {
+      '$sort': {_id: -1}
+    }
+])
+
