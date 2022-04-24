@@ -1,9 +1,12 @@
-# MapReduce
+# Hadoop streaming
 
 
 
+Riferimenti utili
 
+https://hadoop.apache.org/docs/stable/hadoop-streaming/HadoopStreaming.html
 
+https://cwiki.apache.org/confluence/display/HADOOP2/HadoopStreaming
 
 
 
