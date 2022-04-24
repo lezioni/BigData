@@ -1,4 +1,4 @@
-const persone = require('./Samples/Persone_eta_altezza.json')
+const persone = require('./Persone_eta_altezza.json')
 
 // Map - Estraggo le informazioni necessarie
 const data = persone.map(function(item) {
