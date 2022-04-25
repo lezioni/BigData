@@ -1,6 +1,7 @@
 use('its')
 
-
+// db.studenti.count()
+// db.studenti.find()
 
 db.studenti.aggregate([
     // seleziono i campi da visualizzare
@@ -24,7 +25,7 @@ db.studenti.aggregate([
         _id : '$nome', 
         conteggio: {$sum: 1}}
     },
-
+/*
     // ordino i documenti
     {
         $sort: {conteggio:-1}},
@@ -38,4 +39,8 @@ db.studenti.aggregate([
     {
         $limit: 3
     }
-])
+*/
+])./**
+ * Provide the number of documents to limit.
+ */
+$limit: 120
