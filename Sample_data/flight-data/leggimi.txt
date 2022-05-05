@@ -1,3 +1,5 @@
 Fonte dati:
 https://github.com/databricks/Spark-The-Definitive-Guide/tree/master/data
-
+
+Esercizi di esempio su 
+Corso BigData\Risorse\A-Gentle-Introduction-to-Apache-Spark.pdf
