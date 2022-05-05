@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 
@@ -15,4 +15,4 @@ for line in sys.stdin:
      # the reducer.
      # The key is anything before the first tab character and the 
      #value is anything after the first tab character.
-     print '{0}\t{1}'.format(word, 1)
+     print (word + '\t' + '1')

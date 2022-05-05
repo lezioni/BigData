@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 
@@ -24,11 +24,11 @@ for line in sys.stdin:
      # Write word and its number of occurrences as a key-value 
      # pair to stdout
      if curr_word:
-        print '{0}\t{1}'.format(curr_word, curr_count)
+        print (curr_word + '\t' + str(curr_count))
 
      curr_word = word
      curr_count = count
 
 # Output the count for the last word
 if curr_word == word:
-  print '{0}\t{1}'.format(curr_word, curr_count)
+  print (curr_word + '\t' + str(curr_count))
