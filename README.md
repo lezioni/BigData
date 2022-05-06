@@ -36,7 +36,7 @@ Sotto, 1
 Crepa, 1
 ```
 
-Per usare i programmi con Hadoop streaming pubblicare i progetti con target runtime `linux-x64`, e se il runtime .NET non è installato aggiungere l'opzione deployment mode `Self-contained`
+Per usare i programmi con Hadoop streaming pubblicare i progetti con target runtime `linux-x64` selezionando l'opzione `produce single file`, e se il runtime .NET non è installato aggiungere l'opzione deployment mode `Self-contained`
 
 Copiare sul cluster il file di input
 
