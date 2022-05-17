@@ -1,5 +1,6 @@
 [{
   "nome": "Stadio",
+  "tipo": "POI",
   "p1": {
     "type": "Point",
     "coordinates": [
@@ -9,6 +10,7 @@
   }
 },{
   "nome": "Piazza Primo Maggio",
+  "tipo": "POI",
   "p1": {
     "type": "Point",
     "coordinates": [
@@ -18,6 +20,7 @@
   }
 },{
   "nome": "Bar 1",
+  "tipo": "bar",
   "p1": {
     "type": "Point",
     "coordinates": [
@@ -27,6 +30,7 @@
   }
 },{
   "nome": "Bar 2",
+  "tipo": "bar",
   "p1": {
     "type": "Point",
     "coordinates": [
@@ -36,6 +40,7 @@
   }
 },{
   "nome": "Bar 3",
+  "tipo": "bar",
   "p1": {
     "type": "Point",
     "coordinates": [
@@ -45,6 +50,7 @@
   }
 },{
   "nome": "Bar 4",
+  "tipo": "bar",
   "p1": {
     "type": "Point",
     "coordinates": [
@@ -54,6 +60,7 @@
   }
 },{
   "nome": "Bar 5",
+  "tipo": "bar",
   "p1": {
     "type": "Point",
     "coordinates": [
@@ -63,6 +70,7 @@
   }
 },{
   "nome": "Bar 6",
+  "tipo": "bar",
   "p1": {
     "type": "Point",
     "coordinates": [
@@ -72,6 +80,7 @@
   }
 },{
   "nome": "Bar 7",
+  "tipo": "bar",
   "p1": {
     "type": "Point",
     "coordinates": [
@@ -81,11 +90,92 @@
   }
 },{
   "nome": "Bar 8",
+  "tipo": "bar",
   "p1": {
     "type": "Point",
     "coordinates": [
       13.228,
       46.058
+    ]
+  }
+},{
+  "nome": "Gelateria 1",
+  "tipo": "gelateria",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.207768193,
+      46.075968403
+    ]
+  }
+},{
+  "nome": "Gelateria 2",
+  "tipo": "gelateria",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.2123,
+      46.08123
+    ]
+  }
+},{
+  "nome": "Gelateria 3",
+  "tipo": "gelateria",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.201168198220026,
+      46.065968401260214
+    ]
+  }
+},{
+  "nome": "Pizzeria 1",
+  "tipo": "pizzeria",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.1818,
+      46.0909
+    ]
+  }
+},{
+  "nome": "Pizzeria 2",
+  "tipo": "pizzeria",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.1611681980026,
+      46.1959684010215
+    ]
+  }
+},{
+  "nome": "Pizzeria 3",
+  "tipo": "pizzeria",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.191100198220026,
+      46.09596000126022
+    ]
+  }
+},{
+  "nome": "Edicola 1",
+  "tipo": "edicola",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.215,
+      46.15
+    ]
+  }
+},{
+  "nome": "Edicola 2",
+  "tipo": "edicola",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.222,
+      46.055
     ]
   }
 }]

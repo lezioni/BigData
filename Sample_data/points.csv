@@ -1,11 +1,19 @@
-nome,p1.coordinates,p1.type
-Stadio,"[13.199928555556259,46.08151934139841]",Point
-Piazza Primo Maggio,"[13.237768198220026,46.065968401260214]",Point
-Bar 1,"[13.207768198220027,46.07596840126021]",Point
-Bar 2,"[13.201768198220027,46.07096840126022]",Point
-Bar 3,"[13.201168198220026,46.065968401260214]",Point
-Bar 4,"[13.191168198220026,46.095968401260215]",Point
-Bar 5,"[13.24,46.07]",Point
-Bar 6,"[13.23,46.08]",Point
-Bar 7,"[13.22,46.05]",Point
-Bar 8,"[13.228,46.058]",Point
+nome,p1.coordinates,p1.type,tipo
+Stadio,"[13.199928555556259,46.08151934139841]",Point,POI
+Piazza Primo Maggio,"[13.237768198220026,46.065968401260214]",Point,POI
+Bar 1,"[13.207768198220027,46.07596840126021]",Point,bar
+Bar 2,"[13.201768198220027,46.07096840126022]",Point,bar
+Bar 3,"[13.201168198220026,46.065968401260214]",Point,bar
+Bar 4,"[13.191168198220026,46.095968401260215]",Point,bar
+Bar 5,"[13.24,46.07]",Point,bar
+Bar 6,"[13.23,46.08]",Point,bar
+Bar 7,"[13.22,46.05]",Point,bar
+Bar 8,"[13.228,46.058]",Point,bar
+Gelateria 1,"[13.207768193,46.075968403]",Point,gelateria
+Gelateria 2,"[13.2123,46.08123]",Point,gelateria
+Gelateria 3,"[13.201168198220026,46.065968401260214]",Point,gelateria
+Pizzeria 1,"[13.1818,46.0909]",Point,pizzeria
+Pizzeria 2,"[13.1611681980026,46.1959684010215]",Point,pizzeria
+Pizzeria 3,"[13.191100198220026,46.09596000126022]",Point,pizzeria
+Edicola 1,"[13.215,46.15]",Point,edicola
+Edicola 2,"[13.222,46.055]",Point,edicola
