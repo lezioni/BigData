@@ -1,0 +1,91 @@
+[{
+  "nome": "Stadio",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.199928555556259,
+      46.08151934139841
+    ]
+  }
+},{
+  "nome": "Piazza Primo Maggio",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.237768198220026,
+      46.065968401260214
+    ]
+  }
+},{
+  "nome": "Bar 1",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.207768198220027,
+      46.07596840126021
+    ]
+  }
+},{
+  "nome": "Bar 2",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.201768198220027,
+      46.07096840126022
+    ]
+  }
+},{
+  "nome": "Bar 3",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.201168198220026,
+      46.065968401260214
+    ]
+  }
+},{
+  "nome": "Bar 4",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.191168198220026,
+      46.095968401260215
+    ]
+  }
+},{
+  "nome": "Bar 5",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.24,
+      46.07
+    ]
+  }
+},{
+  "nome": "Bar 6",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.23,
+      46.08
+    ]
+  }
+},{
+  "nome": "Bar 7",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.22,
+      46.05
+    ]
+  }
+},{
+  "nome": "Bar 8",
+  "p1": {
+    "type": "Point",
+    "coordinates": [
+      13.228,
+      46.058
+    ]
+  }
+}]
