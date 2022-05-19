@@ -1,4 +1,4 @@
-nome,p1.coordinates,p1.type,tipo
+nome,coordinate.coordinates,coordinate.type,tipo
 Stadio,"[13.199928555556259,46.08151934139841]",Point,POI
 Piazza Primo Maggio,"[13.237768198220026,46.065968401260214]",Point,POI
 Bar 1,"[13.207768198220027,46.07596840126021]",Point,bar
